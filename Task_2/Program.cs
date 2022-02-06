@@ -40,9 +40,9 @@ namespace Task_2
     }
     internal class MyNewList<T> : IEnumerable<T>  // односвязный список
     {
-        Node<T> head; // первый элемент
-        Node<T> tail; // последний/хвостовой элемент
-        int count;  // количество элементов в списке
+        Node<T> head; 
+        Node<T> tail; 
+        int count; 
 
         // добавление элемента
         public void Add(T data)
@@ -67,21 +67,19 @@ namespace Task_2
             {
                 if (current.Data.Equals(data))
                 {
-                    // Если узел в середине или в конце
+                   
                     if (previous != null)
                     {
-                        // убираем узел current, теперь previous ссылается не на current, а на current.Next
+                       
                         previous.Next = current.Next;
 
-                        // Если current.Next не установлен, значит узел последний,
-                        // изменяем переменную tail
+                        
                         if (current.Next == null)
                             tail = previous;
                     }
                     else
                     {
-                        // если удаляется первый элемент
-                        // переустанавливаем значение head
+                        
                         head = head.Next;
 
                         // если после удаления список пуст, сбрасываем tail
@@ -107,7 +105,7 @@ namespace Task_2
             count = 0;
         }
         
-        // добвление в начало
+        // добaвление в начало
         public void AppendFirst(T data)
         {
             Node<T> node = new Node<T>(data);
